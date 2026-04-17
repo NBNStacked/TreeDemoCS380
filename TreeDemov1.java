@@ -59,6 +59,10 @@ class Node{
 	   */
 	   public void preOrderTraversal(Node root){
 		//implement in here
+         if(root == null){ return;}
+         System.out.print(root.value);
+         preOrderTraversal(root.left);
+         preOrderTraversal(root.right);
 		   
 	   }
 
@@ -154,7 +158,7 @@ class Node{
 
 
 
-	public class TreeDemo{
+	public class TreeDemov1{
 	   public static void main(String[] args){
 	      BinarySearchTree t1  = new BinarySearchTree();
 	      t1.insert( 24);
