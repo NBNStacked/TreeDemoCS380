@@ -139,6 +139,14 @@ class Node{
 	   */
 	   public int getMax(Node root){
          //implement in here
+         
+         if(root == null){return;}
+         
+         Node temp = root;
+         
+         while(temp.right != null){ temp = temp.right;}
+         
+         return temp.value;
 	   }
 	   
 	   
