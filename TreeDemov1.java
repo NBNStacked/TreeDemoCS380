@@ -9,6 +9,10 @@ class Node{
 	   }
 
 	}
+   
+   /**
+   * Binary Search Tree class
+   */
 
 	class BinarySearchTree{
 
@@ -53,14 +57,16 @@ class Node{
 	      }//closing main if-else 
 	   }
 	   
-	   /*
-	   pre-order traversal
-	   Prints the value of every node preorder
+	   /**
+	   *pre-order traversal
+	   *Prints the value of every node preorder
+      *@param root Tree root
 	   */
 	   public void preOrderTraversal(Node root){
 		//implement in here
          if(root == null){ return;}
          System.out.print(root.value);
+         System.out.print(" ");
          preOrderTraversal(root.left);
          preOrderTraversal(root.right);
 		   
@@ -68,37 +74,45 @@ class Node{
 
 	   
 	   
-	   /*
-	   in-order traversal
+	   /**
+	   *in-order traversal
+      *Prints the value of every node in order
+      *@param root Tree root
 	   */
 	   public void inOrderTraversal(Node root){
 	      //implement in here
          if(root == null){ return;}
          inOrderTraversal(root.left);
          System.out.print(root.value);
+         System.out.print(" ");
          inOrderTraversal(root.right);
 	   }
 	   
 	   
 	   
-	   /*
-	   post-order traversal
+	   /**
+	   *post-order traversal
+      *Print every value in post order
+      *@param root Tree root
 	   */
 	  
 	   public void postOrderTraversal(Node root){
-         //implement in here
+         
          if(root == null){ return;}
          postOrderTraversal(root.left);
          postOrderTraversal(root.right);
          System.out.print(root.value);
+         System.out.print(" ");
 		   
 	   }
 	   
 	   
 	   
-	   /*
-	   a method to find the node in the tree
-	   with a specific value
+	   /**
+	   *a method to find the node in the tree
+	   *with a specific value
+      *@param root Tree root
+      *@param key Node value to search for
 	   */
 	   public boolean find(Node root, int key){
 		 //implement in here
@@ -115,13 +129,14 @@ class Node{
 	   
 	   
 	   /*
-	   a method to find the node in the tree
-	   with a smallest key
+	   *a method to find the node in the tree
+	   *with a smallest key
+      *@param root Tree root
 	   */
 	   public int getMin(Node root){
          //implement in here
          
-         if(root == null){return;}
+         if(root == null){return -1;}
          
          Node temp = root;
          
@@ -134,13 +149,14 @@ class Node{
 	  
 	  
 	   /*
-	   a method to find the node in the tree
-	   with a largest key
+	   *a method to find the node in the tree
+	   *with a largest key
+      *@param root Tree root
 	   */
 	   public int getMax(Node root){
          //implement in here
          
-         if(root == null){return;}
+         if(root == null){return -1;}
          
          Node temp = root;
          
@@ -188,7 +204,9 @@ class Node{
 	}
 
 
-
+   /**
+   *Tree Demo Main
+   */
 	public class TreeDemov1{
 	   public static void main(String[] args){
 	      BinarySearchTree t1  = new BinarySearchTree();
@@ -198,10 +216,29 @@ class Node{
 	      t1.insert(9);
 	      t1.insert(90);
 	      t1.insert(22);
+         
+         int searchVal = 80;
 	            
-	      System.out.print("in-order :   ");
+	      System.out.print("in-order:   ");
 	      t1.inOrderTraversal(t1.root);
-	      System.out.println();
+         
+         System.out.println();
+         
+         System.out.print("pre-order:   ");
+	      t1.preOrderTraversal(t1.root);
+         
+         System.out.println();
+         
+         System.out.print("post-order:   ");
+	      t1.postOrderTraversal(t1.root);
+         
+         System.out.println();
+         
+         
+         System.out.println("Min Value: " + t1.getMin(t1.root) );
+         System.out.println("Max Value: " + t1.getMax(t1.root) );
+         
+	      
 	           
 	      
 	   }  
