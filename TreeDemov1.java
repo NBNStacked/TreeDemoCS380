@@ -87,6 +87,7 @@ class Node{
 	  
 	   public void postOrderTraversal(Node root){
          //implement in here
+         if(root == null){ return;}
          postOrderTraversal(root.left);
          postOrderTraversal(root.right);
          System.out.print(root.value);
@@ -119,6 +120,14 @@ class Node{
 	   */
 	   public int getMin(Node root){
          //implement in here
+         
+         if(root == null){return;}
+         
+         Node temp = root;
+         
+         while(temp.left != null){ temp = temp.left;}
+         
+         return temp.value;
 	      
 	   }
 	  
